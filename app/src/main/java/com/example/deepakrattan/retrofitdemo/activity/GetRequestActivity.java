@@ -2,7 +2,6 @@ package com.example.deepakrattan.retrofitdemo.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class GetRequestActivity extends AppCompatActivity {
 
     //We are interested in hitting the following API
     // http://navjacinth9.000webhostapp.com/json/retrofit-demo.php?company_no=123
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<EmployeeList> call, Response<EmployeeList> response) {
                 EmployeeList employeeList = response.body();
                 employeeArrayList = employeeList.getEmployeeList();
-                adapter = new EmployeeAdapter(MainActivity.this, employeeArrayList);
+                adapter = new EmployeeAdapter(GetRequestActivity.this, employeeArrayList);
                 rv.setAdapter(adapter);
 
             }

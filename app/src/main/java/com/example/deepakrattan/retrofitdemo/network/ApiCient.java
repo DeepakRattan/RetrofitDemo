@@ -9,13 +9,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiCient {
 
-    public static final String BASE_URL = "http://navjacinth9.000webhostapp.com/json/";
+    public static final String BASE_URL_GET = "http://navjacinth9.000webhostapp.com/json/";
+    public static final String BASE_URL_POST = "http://resourcemanage.sfsd.sebizfinishingschool.com/API/";
     private static Retrofit retrofit;
 
     public static final Retrofit getRetrofitInstance() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(BASE_URL_POST)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
